@@ -90,3 +90,6 @@ ENV/
 
 #SQLite File
 db.sqlite3
+
+#Thumbs Windows file
+Thumbs.db

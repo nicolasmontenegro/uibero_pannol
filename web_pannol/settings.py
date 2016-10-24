@@ -31,12 +31,18 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # default apps
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # project apps
+    'pannol',
+
+    # plugins
     'django_extensions',
 ]
 
@@ -88,6 +94,13 @@ DATABASES = {
     }
 }
 
+# Authentication backend configuration changed to "dual-authentication"
+# https://github.com/Zeioth/django-dual-authentication
+
+AUTHENTICATION_BACKENDS = ['django-dual-authentication.backends.DualAuthentication']
+AUTHENTICATION_METHOD = 'email'
+AUTHENTICATION_CASE_SENSITIVE = 'username'
+
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -126,3 +139,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Configuration of graph models export, from extension plugin
+# http://django-extensions.readthedocs.io/en/latest/graph_models.html
+
+GRAPH_MODELS = {
+    'all_applications': False,
+    'group_models': True,
+}
