@@ -45,3 +45,9 @@ class Producto(models.Model):
     estado = models.CharField(null=False, max_length=1, choices = ESTADOS, default='0')
     serial = models.CharField(blank=True, max_length=100)
     informacion = models.ForeignKey('InfoProducto', null=True, on_delete=models.SET_NULL)
+
+class Prestamo(models.Model):
+    id= models.AutoField(primary_key=True)
+    fecha_entrega= models.DateTimeField(blank=True, null=True, default= None)
+    fecha_devolucion= models.DateTimeField(blank=True, null=True, default= None)
+    unidad=models.ForeignKey('Producto', null=False,blank=False, on_delete=models.CASCADE)

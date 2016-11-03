@@ -31,3 +31,4 @@ class InfoProductoAdmin(admin.ModelAdmin):
 admin.site.register(models.InfoProducto, InfoProductoAdmin)
 admin.site.register(models.Estudiante)
 admin.site.register(models.Producto)
+admin.site.register(models.Prestamo)
