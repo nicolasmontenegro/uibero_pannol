@@ -1,7 +1,5 @@
+{% extends "base.html" %}
 {% load staticfiles %}
-<ul>
-{% for producto in lista %}
-<li>{{producto.get_estado_display}}, {{producto.serial}}, {{producto.id}} <br> {{producto.informacion.nombre}}, {{producto.informacion.marca}}, {{producto.informacion.modelo}}
-</li>
-{% endfor %}
-</ul>
+
+{% block contenido %}
+{% endblock %}

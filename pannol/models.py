@@ -53,15 +53,15 @@ class Prestamo(models.Model):
     unidad=models.ForeignKey('Producto', null=False,blank=False, on_delete=models.CASCADE)
 
 
-class asignatura(models.Model):   
-   id =models.AutoField(primary_key= True)
-   Nombre= models.CharField(blanck=False, null=False, max_lenght=100)
-   año=models.DateField(blanck=False, null=False,auto_now=False)
-   MEstudiante = models.Foreignkey('Estudiante', null=False)
+class Asignatura(models.Model):   
+    id =models.AutoField(primary_key= True)
+    Nombre= models.CharField(blank=False, null=False, max_length=100)
+    año=models.DateField(blank=False, null=False,auto_now=False)
+    MEstudiante = models.ForeignKey('Estudiante', null=False)
 
 class Docente(models.Model):
     ocupacion= models.CharField(null=False,max_length=100,blank =False)
     titulo= models.CharField(null=False,max_length=100,blank =False)
 
-class Pannolero(models.model):
-    info=models.Foreignkey('Docente',blank=False,null=False)
+class Pannolero(models.Model):
+    info= models.ForeignKey('Docente',blank=False,null=False)
