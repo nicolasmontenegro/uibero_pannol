@@ -59,3 +59,11 @@ class asignatura(models.Model):
    id =models.AutoField(primary_key= True)
    Nombre= models.CharField(blanck=False, null=False, max_lenght=100)
    año=models.DateField(blanck=False, null=False,auto_now=False)
+   MEstudiante = models.Foreignkey('Estudiante', null=False)
+
+class Docente(models.Model):
+    ocupacion= models.CharField(null=False,max_length=100,blank =False)
+    titulo= models.CharField(null=False,max_length=100,blank =False)
+
+class Pannolero(models.model):
+    info=models.Foreignkey('Docente',blank=False,null=False)
